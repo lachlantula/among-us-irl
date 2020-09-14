@@ -1,8 +1,14 @@
 <template>
-  <div class="create">
-    <h2>Create</h2>
-    <btn>Log in to account</btn>
-    <btn>Create an account</btn>
+  <div class="join">
+    <h2>Join</h2>
+    <label for="username">Username</label>
+    <input type="text" name="username" placeholder="Jeffrey">
+    <br>
+    <label for="game-code">Game code</label>
+    <input type="text" name="game-code" placeholder="8a3C">
+    <btn send-to="joined">
+      Join game
+    </btn>
     <btn small send-to="/">
       Go back
     </btn>
@@ -13,12 +19,12 @@
 import btn from '@/components/Btn.vue'
 
 export default {
-  name: 'Create',
+  name: 'Join',
   components: {
     btn
   }
 }
 </script>
 
-<style>
+<style lang="scss">
 </style>

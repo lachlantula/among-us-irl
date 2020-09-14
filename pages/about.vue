@@ -34,7 +34,7 @@
       <h3>How do I join a game?</h3>
       <ol>
         <li>
-          Go to the <nuxt-link to="/game/join">
+          Go to the <nuxt-link to="/login" :route-query="{'typeOfLogin': 'Join', 'goto': 'join'}">
             'join game'</nuxt-link> <!-- eslint-disable-line -->
           page.
         </li>
@@ -46,7 +46,7 @@
       <p>No problem. Well, it is, but it's not a huge deal. You'll just need to remap your playspace.</p>
       <ol>
         <li>
-          Go to the <nuxt-link to="/game/join">
+          Go to the <nuxt-link to="/login" :route-query="{'typeOfLogin': 'Create account', 'goto': 'create'}">
             'create game'</nuxt-link> <!-- eslint-disable-line -->
           page.
         </li>

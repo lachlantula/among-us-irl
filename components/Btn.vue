@@ -12,12 +12,21 @@ export default {
       type: String,
       default: ''
     },
+    routeQuery: {
+      type: Object,
+      default: () => {
+        return {}
+      }
+    },
     small: Boolean
   },
   methods: {
     activate () {
       if (this.sendTo) {
-        this.$router.push(this.sendTo)
+        this.$router.push({
+          path: this.sendTo,
+          query: this.routeQuery
+        })
       }
       this.$emit('pressed')
     }

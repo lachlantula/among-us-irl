@@ -1,13 +1,16 @@
 <template>
-  <div class="join">
-    <h2>Join</h2>
+  <div class="login">
     <label for="username">Username</label>
     <input type="text" name="username" placeholder="Jeffrey">
     <br>
+    <div v-if="typeOfLogin === 'Create account'">
+      <label for="password">Password</label>
+      <input type="password" name="password">
+    </div>
     <label for="game-code">Game code</label>
     <input type="text" name="game-code" placeholder="8a3C">
     <btn send-to="joined">
-      Join game
+      {{ typeOfLogin }}
     </btn>
     <btn small send-to="/">
       Go back
@@ -19,9 +22,17 @@
 import btn from '@/components/Btn.vue'
 
 export default {
-  name: 'Join',
+  name: 'Login',
   components: {
     btn
+  },
+  data () {
+    return {
+      typeOfLogin: ''
+    }
+  },
+  mounted () {
+    this.typeOfLogin = this.$route.query.typeOfLogin
   }
 }
 </script>

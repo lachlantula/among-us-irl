@@ -52,7 +52,24 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    [
+      '@nuxtjs/firebase',
+      {
+        config: {
+          apiKey: 'AIzaSyBUSpIaO_HEE1Ww1yfD9oBkNhFm2UsWiOU',
+          authDomain: 'among-us-irl.firebaseapp.com',
+          databaseURL: 'https://among-us-irl.firebaseio.com',
+          projectId: 'among-us-irl',
+          storageBucket: 'among-us-irl.appspot.com',
+          messagingSenderId: '629030332966',
+          appId: '1:629030332966:web:17c842ac8ddc2cf84994e7'
+        },
+        services: {
+          auth: true
+        }
+      }
+    ]
   ],
   /*
   ** Build configuration

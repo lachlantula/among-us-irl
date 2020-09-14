@@ -1,9 +1,9 @@
 <template>
   <div class="index">
-    <btn send-to="game/create">
+    <btn send-to="game/beforeCreate">
       Create game
     </btn>
-    <btn send-to="game/join">
+    <btn send-to="login" :route-query="{'typeOfLogin': 'Join', 'goto': 'join'}">
       Join game
     </btn>
     <btn small send-to="about">

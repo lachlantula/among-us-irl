@@ -19,6 +19,7 @@ export default {
       if (this.sendTo) {
         this.$router.push(this.sendTo)
       }
+      this.$emit('pressed')
     }
   }
 }

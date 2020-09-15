@@ -7,8 +7,10 @@
       <label for="password">Password</label>
       <input type="password" name="password">
     </div>
-    <label for="game-code">Game code</label>
-    <input type="text" name="game-code" placeholder="8a3C">
+    <div v-else>
+      <label for="game-code">Game code</label>
+      <input type="text" name="game-code" placeholder="8a3C">
+    </div>
     <btn send-to="joined">
       {{ typeOfLogin }}
     </btn>

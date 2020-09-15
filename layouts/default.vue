@@ -2,6 +2,7 @@
   <div class="container">
     <header>
       <h1>among-us-irl prototype</h1>
+      <div class="navigationProgress" :style="{'width': navigationStep + '%'}" />
     </header>
     <main>
       <nuxt />
@@ -11,6 +12,33 @@
     </footer>
   </div>
 </template>
+
+<script>
+import { mapGetters } from 'vuex'
+
+export default {
+  name: 'Default',
+  computed: mapGetters({
+    navigationStep: 'navigation/navigationStep'
+  }),
+  watch: {
+    $route (to, from) {
+      const routeName = to.name
+      switch (routeName) {
+        case 'index':
+          this.$store.commit('navigation/setNavigationStep', 0)
+          break
+        case 'game-beforeCreate':
+          this.$store.commit('navigation/setNavigationStep', 25)
+          break
+        case 'login':
+          this.$store.commit('navigation/setNavigationStep', 50)
+          break
+      }
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 html {
@@ -82,5 +110,10 @@ h3 {
 hr {
   margin: 10px;
   color: hsl(0, 0%, 75%);
+}
+
+.navigationProgress {
+  background: red;
+  height: 24px;
 }
 </style>

@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'Btn',
   props: {
@@ -20,6 +22,9 @@ export default {
     },
     small: Boolean
   },
+  computed: mapGetters({
+    navigationStep: 'navigation/navigationStep'
+  }),
   methods: {
     activate () {
       if (this.sendTo) {
